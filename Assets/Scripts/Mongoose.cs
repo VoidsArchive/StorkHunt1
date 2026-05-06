@@ -10,12 +10,13 @@ public class Mongoose : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void Update()
+    public void OnCollisionEnter2D(Collision2D other)
     {
-
+        if (other.collider.tag == "Projectile")
+        {
+            Destroy(other.gameObject);
+        }
     }
-
-
     public void Move(Vector2 direction)
     {
         FaceCorrectDirection(direction);

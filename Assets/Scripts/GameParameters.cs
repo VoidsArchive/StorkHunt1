@@ -10,5 +10,8 @@ public static class GameParameters
     public static float StorkMaximumSecondsToWait = 6f;
     public static float StorkSecondsOnScreen = 3f;
 
+    public static float ProjectileMinimumSecondsToWait = 1f;
+    public static float ProjectileMaximumSecondsToWait = 2f;
+
 
 }

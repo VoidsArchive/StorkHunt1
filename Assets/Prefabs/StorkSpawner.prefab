@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67869ca36885f417980b9ce53a11fe0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StorkSpawner
-  prefab: {fileID: 6219917792452753135, guid: 70be0836afd73410d8347bc9c7ce07e2, type: 3}
+  prefab: {fileID: 8365120912633927091, guid: 99f6cff7d3f144147a2521e6fd0963d6, type: 3}
   minimumSecondsToWait: 0
   maximumSecondsToWait: 0
