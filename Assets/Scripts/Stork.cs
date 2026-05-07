@@ -6,14 +6,11 @@ public class Stork : TimedObject
     {
         secondsOnScreen = GameParameters.StorkSecondsOnScreen;
         base.Start();
-      
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-       
-        
-        if (other.CompareTag("Bottom"))
+        if (other.CompareTag("Destroyer"))
         {
             Destroy(gameObject);
         }

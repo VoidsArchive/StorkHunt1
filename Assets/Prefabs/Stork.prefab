@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4858167179973795675}
   - component: {fileID: -2899327038592982316}
   m_Layer: 0
-  m_Name: Triangle (Stork)
+  m_Name: Stork
   m_TagString: Stork
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

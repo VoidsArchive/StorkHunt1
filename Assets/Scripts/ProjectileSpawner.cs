@@ -17,19 +17,21 @@ public class ProjectileSpawner : MonoBehaviour
 
     IEnumerator CountdownUntilCreation()
     {
-        isOkToCreate = false;
-        
-        float secondsToWait = Random.Range(GameParameters.ProjectileMinimumSecondsToWait, GameParameters.ProjectileMaximumSecondsToWait);
-        yield return new WaitForSeconds(secondsToWait);
-        Place();
-        
-        isOkToCreate = true;
+        if (isOkToCreate)
+        {
+            isOkToCreate = false;
+
+            float secondsToWait = Random.Range(GameParameters.ProjectileMinimumSecondsToWait,
+                GameParameters.ProjectileMaximumSecondsToWait);
+            yield return new WaitForSeconds(secondsToWait);
+            Place();
+
+            isOkToCreate = true;
+        }
     }
 
     public virtual void Place()
     {
         Instantiate(ProjectilePrefab, transform.position , Quaternion.identity);
     }
-    
-    
 }
