@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Stork
-  - Projectile
+  - Bottom
   layers:
   - Default
   - TransparentFX

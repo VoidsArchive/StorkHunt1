@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
     //public CanvasGroup StartScreenCanvasGroup;
     //public CanvasGroup GameOverScreenCanvasGroup;
     public GameTimer GameTimer;
+    public TMP_Text bulletText;
 
     public void SetScoreText(int score)
     {
@@ -37,10 +38,10 @@ public class UI : MonoBehaviour
 
     public void ShowTime()
     {
-        if (GameTimer.GetTimeAsString() == "3")
+        timeText.text = GameTimer.GetTimeAsString();
+        if (GameTimer.GetSecondsRemaining() == 3)
         {
             timeText.color = Color.red;
         }
-        timeText.text = GameTimer.GetTimeAsString();
     }
 }

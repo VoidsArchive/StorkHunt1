@@ -31,10 +31,13 @@ public class GameTimer : MonoBehaviour
         int seconds = timeRemaining - (minutes * 60);
         string minutesAsString = String.Format("{0:00}", minutes);
         string secondsAsString = String.Format("{0:00}", seconds);
-        
         return minutesAsString + ":" + secondsAsString;
     }
 
+    public int GetSecondsRemaining()
+    {
+        return timeRemaining;
+    }
     public bool IsRunning()
     {
         return !isStopped;
