@@ -38,15 +38,10 @@ public class UI : MonoBehaviour
 
     public void ShowTime()
     {
-        if (GameTimer.GetTimeAsString() == "3")
+        timeText.text = GameTimer.GetTimeAsString();
+        if (GameTimer.GetSecondsRemaining() == 3)
         {
             timeText.color = Color.red;
         }
-        timeText.text = GameTimer.GetTimeAsString();
-    }
-
-    public void ShowBullets()
-    {
-        
     }
 }

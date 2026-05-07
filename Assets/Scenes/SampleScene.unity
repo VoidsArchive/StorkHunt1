@@ -874,7 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI
   timeText: {fileID: 1859880088}
   GameTimer: {fileID: 1942076284}
-  bulletText: {fileID: 0}
+  bulletText: {fileID: 733040287}
 --- !u!1001 &1638651862
 PrefabInstance:
   m_ObjectHideFlags: 0
