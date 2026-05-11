@@ -7,14 +7,14 @@ public class Game : MonoBehaviour
     
     public void Start()
     {
-       // Ui.HideGameOverScreen();
-       // Ui.ShowStartScreen();
-       StartGame();
+       Ui.HideGameOverScreen();
+       Ui.ShowStartScreen();
+       //StartGame();
     }
     public void OnStartButtonClicked()
-    {
-        //Ui.HideStartScreen();
-       // StartGame();
+    { 
+        Ui.HideStartScreen();
+       StartGame();
     }
 
     private void StartGame()
@@ -26,7 +26,7 @@ public class Game : MonoBehaviour
     private void OnTimerFinished()
     {
         print("Timer Finished");
-        //Ui.ShowGameOverScreen();
+        Ui.ShowGameOverScreen();
     }
 
     public void Update()
