@@ -10,7 +10,6 @@ public class UI : MonoBehaviour
     //public CanvasGroup StartScreenCanvasGroup;
     //public CanvasGroup GameOverScreenCanvasGroup;
     public GameClock gameClock;
-    public TMP_Text bulletText;
 
     private void Awake()
     {

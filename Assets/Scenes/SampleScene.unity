@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: PowerUps
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1183,7 +1183,6 @@ MonoBehaviour:
   timeText: {fileID: 1859880088}
   activePowerupText: {fileID: 1205292162}
   gameClock: {fileID: 1942076284}
-  bulletText: {fileID: 733040287}
 --- !u!1001 &1638651862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1324,7 +1323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 10
-  currentHealth: 10
+  currentHealth: 5
   healthText: {fileID: 1698413074}
 --- !u!114 &1698413074
 MonoBehaviour:
