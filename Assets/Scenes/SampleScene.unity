@@ -731,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game
   Ui: {fileID: 1497897164}
-  gameTimer: {fileID: 1942076284}
+  gameTimer: {fileID: 0}
 --- !u!4 &690894482
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,7 +1291,6 @@ GameObject:
   - component: {fileID: 1698413072}
   - component: {fileID: 1698413075}
   - component: {fileID: 1698413074}
-  - component: {fileID: 1698413073}
   m_Layer: 5
   m_Name: Text (TMP) - HP
   m_TagString: Untagged
@@ -1318,21 +1317,6 @@ RectTransform:
   m_AnchoredPosition: {x: 127.70007, y: 940}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1698413073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698413071}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 699e8478bf83adc419ce21dc953f1630, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  maxHealth: 10
-  currentHealth: 10
-  healthText: {fileID: 1698413074}
 --- !u!114 &1698413074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,9 +2071,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1698413074}
+    - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
+      propertyPath: currentHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5524079686586055183, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: BulletCounter
       value: 
