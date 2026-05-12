@@ -1945,9 +1945,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
+      propertyPath: maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1698413074}
+    - target: {fileID: 652676720336421679, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
+      propertyPath: currentHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5524079686586055183, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: BulletCounter
       value: 
