@@ -6,10 +6,23 @@ public class UI : MonoBehaviour
 {
     //public TMP_Text scoreText;
     public TMP_Text timeText;
+    public TMP_Text activePowerupText;
     //public CanvasGroup StartScreenCanvasGroup;
     //public CanvasGroup GameOverScreenCanvasGroup;
-    public GameTimer GameTimer;
+    public GameClock gameClock;
     public TMP_Text bulletText;
+
+    private void Awake()
+    {
+        if (activePowerupText == null)
+        {
+            Transform powerupTextTransform = transform.Find("Text (TMP) - Powerups");
+            if (powerupTextTransform != null)
+            {
+                activePowerupText = powerupTextTransform.GetComponent<TMP_Text>();
+            }
+        }
+    }
 
     public void SetScoreText(int score)
     {
@@ -38,10 +51,17 @@ public class UI : MonoBehaviour
 
     public void ShowTime()
     {
-        timeText.text = GameTimer.GetTimeAsString();
-        if (GameTimer.GetSecondsRemaining() == 3)
+        if (timeText != null && gameClock != null)
         {
-            timeText.color = Color.red;
+            timeText.text = gameClock.GetTimeAsString();
+        }
+    }
+
+    public void ShowActivePowerups()
+    {
+        if (activePowerupText != null)
+        {
+            activePowerupText.text = PowerUps.GetActiveTimedPowerupsText();
         }
     }
 }

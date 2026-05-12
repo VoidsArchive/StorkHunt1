@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7626839535546352321}
   - component: {fileID: 5381189265953040439}
   - component: {fileID: 4329764172063840154}
+  - component: {fileID: -8284129052606771973}
   m_Layer: 0
   m_Name: Stork (With Projectiles)
   m_TagString: Stork
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6278551531000726368, guid: e4abe22e958b748e882bd51df7bb3c86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,7 +185,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4329764172063840154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +199,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileSpawner
   ProjectilePrefab: {fileID: 5318868867273392149, guid: f9d76b9b960471c409852bcc366ae397, type: 3}
+--- !u!114 &-8284129052606771973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365120912633927091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d788d9fd1644ea8a9a25ffc52661a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stork
+  secondsOnScreen: 20
+  powerUpPrefab: {fileID: 2399075797690494303, guid: 21dd3aaac7fcf9047839657d9729cccc, type: 3}
+  powerUpDropChance: 0.1

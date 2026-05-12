@@ -3,7 +3,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public UI Ui;
-    public GameTimer gameTimer;
+    public GameClock gameClock;
     
     public void Start()
     {
@@ -19,8 +19,9 @@ public class Game : MonoBehaviour
 
     private void StartGame()
     {
-        gameTimer.StartTimer(durationInSeconds: 10, OnTimerFinished);
+        gameClock.StartTimer(OnTimerFinished);
         Ui.ShowTime();
+        Ui.ShowActivePowerups();
     }
 
     private void OnTimerFinished()
@@ -32,6 +33,7 @@ public class Game : MonoBehaviour
     public void Update()
     {
         Ui.ShowTime();
+        Ui.ShowActivePowerups();
     }
 
     public void OnPlayAgainButtonClicked()

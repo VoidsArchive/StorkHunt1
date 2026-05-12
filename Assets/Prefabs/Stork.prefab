@@ -83,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6278551531000726368, guid: e4abe22e958b748e882bd51df7bb3c86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -184,7 +184,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-2899327038592982316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,3 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stork
   secondsOnScreen: 1
+  powerUpPrefab: {fileID: 2399075797690494303, guid: 21dd3aaac7fcf9047839657d9729cccc, type: 3}
+  powerUpDropChance: 0.1

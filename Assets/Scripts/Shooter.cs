@@ -29,6 +29,12 @@ public class Shooter : MonoBehaviour
                 Debug.Log("HIT STORK!");
                 clickPending = false;
 
+                Stork stork = other.GetComponent<Stork>();
+                if (stork != null)
+                {
+                    stork.MarkAsShotDown();
+                }
+
                 Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
                 if (rb != null && rb.bodyType != RigidbodyType2D.Dynamic)
                 {

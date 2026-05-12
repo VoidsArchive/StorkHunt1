@@ -6,9 +6,16 @@ public class ProjectileSpawner : MonoBehaviour
     public GameObject ProjectilePrefab;
     
     private bool isOkToCreate = true;
+    private Stork stork;
+
+    private void Start()
+    {
+        stork = GetComponent<Stork>();
+    }
+
     void Update()
     {
-        if (isOkToCreate)
+        if (isOkToCreate && CanStillSpawnProjectiles())
         { 
             StartCoroutine(CountdownUntilCreation());
         }
@@ -21,9 +28,22 @@ public class ProjectileSpawner : MonoBehaviour
         {
             isOkToCreate = false;
 
+            if (!CanStillSpawnProjectiles())
+            {
+                isOkToCreate = true;
+                yield break;
+            }
+
             float secondsToWait = Random.Range(GameParameters.ProjectileMinimumSecondsToWait,
                 GameParameters.ProjectileMaximumSecondsToWait);
             yield return new WaitForSeconds(secondsToWait);
+
+            if (!CanStillSpawnProjectiles())
+            {
+                isOkToCreate = true;
+                yield break;
+            }
+
             Place();
 
             isOkToCreate = true;
@@ -33,5 +53,10 @@ public class ProjectileSpawner : MonoBehaviour
     public virtual void Place()
     {
         Instantiate(ProjectilePrefab, transform.position , Quaternion.identity);
+    }
+
+    private bool CanStillSpawnProjectiles()
+    {
+        return stork == null || !stork.IsShotDown;
     }
 }
