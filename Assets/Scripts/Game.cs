@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
     public void OnStartButtonClicked()
     { 
         Ui.HideStartScreen();
+        //Ui.ShowGameBackground();
        StartGame();
     }
 
@@ -29,6 +30,7 @@ public class Game : MonoBehaviour
     private void OnTimerFinished()
     {
         print("Timer Finished");
+        Ui.HideGameOverScreen();
         Ui.ShowGameOverScreen();
         Music.PlayMenuMusic();
     }

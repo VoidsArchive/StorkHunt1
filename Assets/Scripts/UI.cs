@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     public TMP_Text timeText;
     public CanvasGroup StartScreenCanvasGroup;
     public CanvasGroup GameOverScreenCanvasGroup;
+    public GameObject GamePlayBackground;
     public GameTimer GameTimer;
     public TMP_Text bulletText;
 
@@ -20,6 +21,7 @@ public class UI : MonoBehaviour
     {
        CanvasGroupDisplayer.Show(StartScreenCanvasGroup);
     }
+    
     public void HideStartScreen()
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
@@ -34,6 +36,10 @@ public class UI : MonoBehaviour
     {
         CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
     }
+    
+    
+    
+   
     
 
     public void ShowTime()

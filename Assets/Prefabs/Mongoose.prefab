@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 375490973092009532}
   - component: {fileID: 8386962169540218089}
   - component: {fileID: 652676720336421679}
+  - component: {fileID: 3728828480248553815}
   m_Layer: 0
   m_Name: Mongoose
   m_TagString: Player
@@ -210,3 +211,25 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 9
   healthText: {fileID: 0}
+--- !u!95 &3728828480248553815
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952181917506483481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4ccf51091351b4bd8847929244eae8cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
