@@ -1549,7 +1549,7 @@ MonoBehaviour:
   timeText: {fileID: 1859880088}
   StartScreenCanvasGroup: {fileID: 1420234856}
   GameOverScreenCanvasGroup: {fileID: 634184349}
-  GamePlayBackgroundCanvasGroup: {fileID: 0}
+  GamePlayBackground: {fileID: 0}
   GameTimer: {fileID: 1942076284}
   bulletText: {fileID: 733040287}
 --- !u!1001 &1638651862
@@ -1560,6 +1560,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1689587100603592220, guid: 26af13a6b240d40b1ac1c1214548a20b, type: 3}
+      propertyPath: Animator
+      value: 
+      objectReference: {fileID: 2955730961461726359, guid: 70be0836afd73410d8347bc9c7ce07e2, type: 3}
     - target: {fileID: 1689587100603592220, guid: 26af13a6b240d40b1ac1c1214548a20b, type: 3}
       propertyPath: BulletManager
       value: 
@@ -2602,7 +2606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8272237659965754593, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.96
+      value: -4.11
       objectReference: {fileID: 0}
     - target: {fileID: 8272237659965754593, guid: 107efe320c6766f42a67e47539cfb0e8, type: 3}
       propertyPath: m_LocalPosition.z

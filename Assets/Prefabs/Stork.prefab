@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stork
   secondsOnScreen: 1
+  animator: {fileID: 2955730961461726359}
 --- !u!95 &2955730961461726359
 Animator:
   serializedVersion: 7

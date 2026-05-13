@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class Stork : TimedObject
+
 {
+    public Animator animator;
     public new void Start()
     {
         secondsOnScreen = GameParameters.StorkSecondsOnScreen;
@@ -14,5 +16,10 @@ public class Stork : TimedObject
         {
             Destroy(gameObject);
         }
+    }
+    
+    public void StartFalling()
+    {
+        animator.SetBool("IsFalling", true);
     }
 }

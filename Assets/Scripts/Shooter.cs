@@ -6,8 +6,6 @@ public class Shooter : MonoBehaviour
     public BulletManager BulletManager;
     private bool clickPending = false;
 
-    public Animator Animator;
-
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -28,7 +26,8 @@ public class Shooter : MonoBehaviour
         {
             if (other.CompareTag("Stork"))
             {
-                //Animator.SetBool("IsFlying", false);
+                //Stork stork = other.GetComponent<Stork>();
+                
                 Debug.Log("HIT STORK!");
                 clickPending = false;
 
@@ -37,10 +36,12 @@ public class Shooter : MonoBehaviour
                 {
                     rb.bodyType = RigidbodyType2D.Dynamic;
                     TimedObject timed = other.GetComponent<TimedObject>();
-                    Animator.SetBool("IsFalling", true);
                     if (timed != null)
                         timed.CancelDeath();
                 }
+                
+                //stork.StartFalling();
+               
             }
         }
         clickPending = false;
