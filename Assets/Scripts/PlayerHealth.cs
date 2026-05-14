@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
-    public int currentHealth;
+    public int currentHealth = GameParameters.PlayerStartingHealth;
     
     public TMP_Text healthText;
     
@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth()
     {
-        healthText.text = "HP " + currentHealth + "/" + maxHealth;
+        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
     }
     
 }
