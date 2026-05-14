@@ -259,17 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &123351293 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1037477717707089817, guid: 70c0ee4dbf4ac644ebda310b8236c6c7, type: 3}
-  m_PrefabInstance: {fileID: 121495293}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67869ca36885f417980b9ce53a11fe0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StorkSpawner
 --- !u!1001 &143678849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,17 +407,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &357058066 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2379948826927147518, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
-  m_PrefabInstance: {fileID: 143678849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aefc852d856d61d42a59c08c4d536e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Mongoose
 --- !u!1 &436746021
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,8 +884,8 @@ MonoBehaviour:
   gameTimer: {fileID: 1942076284}
   PlayerHealth: {fileID: 1797105100}
   Music: {fileID: 1386782064}
-  mongoosePrefab: {fileID: 357058066}
-  storkSpawnerPrefab: {fileID: 123351293}
+  mongoosePrefab: {fileID: 2379948826927147518, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+  storkSpawnerPrefab: {fileID: 1037477717707089817, guid: 70c0ee4dbf4ac644ebda310b8236c6c7, type: 3}
 --- !u!4 &690894482
 Transform:
   m_ObjectHideFlags: 0

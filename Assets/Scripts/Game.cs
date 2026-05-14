@@ -138,6 +138,7 @@ public class Game : MonoBehaviour
         PlayerHealth.ResetHealth();
         Ui.ShowHealth();
         gameTimer.ResetTimer();
+        Music.PlayGameMusic();
         if (activeMongoose == null)
         {
             GameObject go = Instantiate(mongoosePrefab.gameObject);
