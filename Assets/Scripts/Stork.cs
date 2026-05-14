@@ -9,6 +9,9 @@ public class Stork : TimedObject
     private float originalSpeed;
     private static float GlobalSpeedMultiplier = 1f;
     private static float GlobalSpeedExpiry = 0f;
+    
+    public Animator animator;
+    
     public new void Start()
     {
         secondsOnScreen = GameParameters.StorkSecondsOnScreen;
@@ -34,10 +37,17 @@ public class Stork : TimedObject
     public void MarkAsShotDown()
     {
         wasShotDown = true;
+        StartFalling();
+        
     }
     public bool IsShotDown
     {
         get { return wasShotDown; }
+    }
+    
+    public void StartFalling()
+    {
+        animator.SetBool("IsFalling", true);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
