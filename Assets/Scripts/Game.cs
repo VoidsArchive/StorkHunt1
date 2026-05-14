@@ -38,7 +38,7 @@ public class Game : MonoBehaviour
 
         if (Music != null)
         {
-            Music.PlayMenuMusic();
+           Music.PlayMenuMusic();
         }
         else
         {
