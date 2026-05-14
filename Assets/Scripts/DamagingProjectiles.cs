@@ -8,20 +8,26 @@ public class DamagingProjectiles : TimedObject
         base.Start();
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Update()
     {
-        if (!other.CompareTag("Stork"))
+        if (!Game.isGameActive)
         {
             Destroy(gameObject);
         }
     }
 
-    public int damage = GameParameters.EnemyProjectileDamage;
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!(other.CompareTag("Stork") || other.CompareTag("Crosshair")))
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerHealth>().ChangeHealth(-damage);
+            PlayerHealth.ChangeHealth(-GameParameters.EnemyProjectileDamage);
         }
     }
 }

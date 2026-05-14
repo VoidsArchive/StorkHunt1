@@ -8,16 +8,13 @@ public class TimedObject : MonoBehaviour
     {
         StartCoroutine(CountdownUntilDeath());
     }
-
     IEnumerator CountdownUntilDeath()
     {
         yield return new WaitForSeconds(secondsOnScreen);
         Destroy(gameObject);
     }
-    
     public void CancelDeath()
     {
-        StopAllCoroutines(); // stops the countdown so it won't auto-destroy
+        StopAllCoroutines();
     }
-
 }

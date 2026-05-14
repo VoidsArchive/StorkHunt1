@@ -1,52 +1,55 @@
 using UnityEngine;
 using System.Collections;
-using NUnit.Framework.Constraints;
 
 public class TimedObjectPlacer : MonoBehaviour
 {
     public GameObject prefab;
-
-    // public float speed = 5f;
-    
     public float minimumSecondsToWait;
     public float maximumSecondsToWait;
-    
-    private bool isOkToCreate = true;
-
-    void Update()
+    private Coroutine spawnCoroutine;
+    protected virtual void Start()
     {
-        if (isOkToCreate)
+        RestartSpawnLoop();
+    }
+    protected virtual float GetMinimumSecondsToWait()
+    {
+        return minimumSecondsToWait;
+    }
+    protected virtual float GetMaximumSecondsToWait()
+    {
+        return maximumSecondsToWait;
+    }
+    protected void RestartSpawnLoop()
+    {
+        if (spawnCoroutine != null)
         {
-            StartCoroutine(CountdownUntilCreation());
+            StopCoroutine(spawnCoroutine);
+        }
+        spawnCoroutine = StartCoroutine(CountdownUntilCreation());
+    }
+    protected void StopSpawnLoop()
+    {
+        if (spawnCoroutine != null)
+        {
+            StopCoroutine(spawnCoroutine);
+            spawnCoroutine = null;
         }
     }
     IEnumerator CountdownUntilCreation()
     {
-        isOkToCreate = false;
-        yield return new WaitForSeconds(Random.Range(minimumSecondsToWait, maximumSecondsToWait));
+        yield return new WaitForSeconds(Random.Range(GetMinimumSecondsToWait(), GetMaximumSecondsToWait()));
         Place();
-        isOkToCreate = true;
+        spawnCoroutine = StartCoroutine(CountdownUntilCreation());
     }
-
-
     public virtual void Place()
     {
-        //Instantiate(prefab, SpawnTools.RandomLocationWorldSpace(), Quaternion.identity);
-        
-        // Spawn just off the right edge of the screen at a random Y position
         Camera cam = Camera.main;
         float rightEdge = cam.ViewportToWorldPoint(new Vector3(1, 0, cam.nearClipPlane)).x;
         float topEdge   = cam.ViewportToWorldPoint(new Vector3(0, 0.95f, cam.nearClipPlane)).y;
         float botEdge   = cam.ViewportToWorldPoint(new Vector3(0, 0.5f, cam.nearClipPlane)).y;
 
-        Vector3 spawnPos = new Vector3(
-            rightEdge + 1f,                          // just off-screen right
-            Random.Range(botEdge, topEdge),          // random height
-            0f
-        );
+        Vector3 spawnPos = new Vector3(rightEdge + 1f, Random.Range(botEdge, topEdge), 0f);
 
         Instantiate(prefab, spawnPos, Quaternion.identity);
     }
-    
-    
 }

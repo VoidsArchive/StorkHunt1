@@ -3,38 +3,29 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 10;
-    public int currentHealth;
-    
-    public TMP_Text healthText;
-    
-    
-    void Start()
+    public static int currentHealth = GameParameters.PlayerStartingHealth;
+
+    public int GetPlayerHealth()
     {
-        UpdateHealth();
+        return currentHealth;
     }
 
-    public void ChangeHealth(int amount)
+    public void ResetHealth()
+    {
+        currentHealth = GameParameters.PlayerStartingHealth;
+    }
+    public static void ChangeHealth(int amount)
     { 
         currentHealth += amount;
-       if (currentHealth > maxHealth)
+       if (currentHealth > GameParameters.PlayerStartingHealth)
        { 
-           currentHealth = maxHealth;
-        } 
-       
-        UpdateHealth();
-
-        if (currentHealth <= 0)
-        {
-            gameObject.SetActive(false);
+           currentHealth = GameParameters.PlayerStartingHealth;
         }
-
-       
     }
 
-    public void UpdateHealth()
+    public string HealthAsString()
     {
-        healthText.text = "HP " + currentHealth + "/" + maxHealth;
+        return ("HP: " + currentHealth + "/" + GameParameters.PlayerStartingHealth);
     }
     
 }

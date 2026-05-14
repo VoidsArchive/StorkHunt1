@@ -4,60 +4,53 @@ using UnityEngine;
 
 public class GameTimer : MonoBehaviour
 {
-    private int timeRemaining;
-    private bool isStopped;
-    
-    private Action methodToCallWhenTimeIsOver;
-    
-    public void StartTimer(int durationInSeconds, 
-        Action methodToCallWhenTimeIsOver)
+    private int elapsedSeconds;
+    private bool isRunning;
+    public void StartTimer()
     {
-        this.methodToCallWhenTimeIsOver = methodToCallWhenTimeIsOver;
-        isStopped = false;
-        timeRemaining = durationInSeconds;
+        StopAllCoroutines();
+        isRunning = true;
+        elapsedSeconds = 0;
         StartCoroutine(TickOneSecond());
     }
-
     public void StopTimer()
     {
-        timeRemaining = 0;
-        isStopped = true;
-        methodToCallWhenTimeIsOver.Invoke();
+        isRunning = false;
+        StopAllCoroutines();
     }
-
+    public void AddSeconds(int seconds)
+    {
+        if (seconds <= 0) return;
+        elapsedSeconds += seconds;
+    }
+    public void RemoveSeconds(int seconds)
+    {
+        if (seconds <= 0) return;
+        elapsedSeconds -= seconds;
+        if (elapsedSeconds < 0)
+        {
+            elapsedSeconds = 0;
+        }
+    }
     public string GetTimeAsString()
     {
-        int minutes = timeRemaining / 60;
-        int seconds = timeRemaining - (minutes * 60);
+        int minutes = elapsedSeconds / 60;
+        int seconds = elapsedSeconds - (minutes * 60);
         string minutesAsString = String.Format("{0:00}", minutes);
         string secondsAsString = String.Format("{0:00}", seconds);
         return minutesAsString + ":" + secondsAsString;
     }
-
-    public int GetSecondsRemaining()
-    {
-        return timeRemaining;
-    }
-    public bool IsRunning()
-    {
-        return !isStopped;
-    }
-
     IEnumerator TickOneSecond()
     {
-        yield return new WaitForSeconds(1);
-
-        if (!isStopped)
+        while (isRunning)
         {
-            timeRemaining = timeRemaining - 1;
-            if (timeRemaining > 0)
-            {
-                StartCoroutine(TickOneSecond());
-            }
-            else
-            {
-                StopTimer();
-            }
+            yield return new WaitForSeconds(1);
+            if (!isRunning) break;
+            elapsedSeconds = elapsedSeconds + 1;
         }
+    }
+    public void ResetTimer()
+    {
+        elapsedSeconds = 0;
     }
 }

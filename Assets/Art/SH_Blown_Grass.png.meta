@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 902b6a8b8c2294d699c76b0f372de656
+guid: 841101b648fcf453b8eb11d4399d0db2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8155783761172236028
-    second: SH_Game_Background_0
+      213: -2344413317925073893
+    second: SH_Blown_Grass_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SH_Game_Background_0
+      name: SH_Blown_Grass_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 8001
-        height: 4500
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8000
+        height: 618
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 409fd6261e5d0de80800000000000000
-      internalID: -8155783761172236028
+      spriteID: b1c81623288f67fd0800000000000000
+      internalID: -2344413317925073893
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b286955b94d94b3c8844f752b8ed437
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SH_Game_Background_0: -8155783761172236028
+      SH_Blown_Grass_0: -2344413317925073893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

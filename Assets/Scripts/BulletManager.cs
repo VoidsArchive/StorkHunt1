@@ -1,20 +1,10 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BulletManager : MonoBehaviour
 {
-    /*
-     * ammo variable
-     * check if the player is reloading
-     * total mag capacity
-     * cancel shooting when player is out of bullets
-     * reload when the player is out of bullets
-     * reload time
-     * only be able to shoot when ammo > 0 and not reloading
-     * add a reload button that can be pressed to reload the gun
-     */
-
     public TMP_Text bulletText;
     public int bulletCount = 8;
     public int maxBullets = 8;
@@ -24,6 +14,11 @@ public class BulletManager : MonoBehaviour
     public void Update()
     {
         UpdateBullets();
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard.rKey.wasPressedThisFrame && Game.isGameActive)
+        {
+            ReloadBullets();
+        }
     }
 
     private void UpdateBullets()
@@ -54,6 +49,11 @@ public class BulletManager : MonoBehaviour
 
     private bool IsOkayToShoot()
     {
+        if (!Game.isGameActive)
+        {
+            bulletCount = maxBullets;
+            return false;
+        }
         if (!isReloading && CheckBulletCount())
         {
             return true;
@@ -109,7 +109,6 @@ public class BulletManager : MonoBehaviour
         {
             return "(Reloading)";
         }
-
         return "";
     }
 }

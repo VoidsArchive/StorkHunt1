@@ -20,7 +20,6 @@ public static class SpriteTools
 
         return Camera.main.ScreenToWorldPoint(screenPosition);
     }
-    
     public static Vector3 ConstrainToScreen(SpriteRenderer spriteRenderer)
     {
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(spriteRenderer.transform.position);
@@ -42,12 +41,10 @@ public static class SpriteTools
 
         return Camera.main.ScreenToWorldPoint(screenPosition);
     }
-
     private static float SpriteHalfWidth(SpriteRenderer spriteRenderer)
     {
         return spriteRenderer.sprite.rect.width / 2;
     }
-
     private static float SpriteHalfHeight(SpriteRenderer spriteRenderer)
     {
         return spriteRenderer.sprite.rect.height / 2;
