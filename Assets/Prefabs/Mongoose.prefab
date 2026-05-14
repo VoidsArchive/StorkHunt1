@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2118535389852537021}
   - component: {fileID: 6838445301868897490}
   - component: {fileID: 1188840775478129192}
+  - component: {fileID: 6861859688513379370}
   m_Layer: 0
   m_Name: Mongoose
   m_TagString: Player
@@ -33,7 +34,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,15 +207,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699e8478bf83adc419ce21dc953f1630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  currentHealth: 5
---- !u!95 &3728828480248553815
+--- !u!95 &6861859688513379370
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5952181917506483481}
+  m_GameObject: {fileID: 4999449171557052780}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4ccf51091351b4bd8847929244eae8cc, type: 2}

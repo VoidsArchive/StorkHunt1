@@ -362,6 +362,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mongoose
       objectReference: {fileID: 0}
+    - target: {fileID: 4999449171557052780, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -400,6 +416,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
