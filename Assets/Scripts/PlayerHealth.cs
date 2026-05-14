@@ -27,9 +27,5 @@ public class PlayerHealth : MonoBehaviour
     {
         return ("HP: " + currentHealth + "/" + GameParameters.PlayerStartingHealth);
     }
-    // public void UpdateHealth()
-    // {
-    //     healthText.text = HealthAsString(healthText);
-    // }
     
 }

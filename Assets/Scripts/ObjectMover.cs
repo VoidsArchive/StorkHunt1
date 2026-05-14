@@ -12,7 +12,6 @@ public class ObjectMover : MonoBehaviour
 
     void Update()
     {
-        // Stop moving if Rigidbody has been switched to Dynamic (i.e. triangle was hit)
         if (rb != null && rb.bodyType == RigidbodyType2D.Dynamic)
             return;
 

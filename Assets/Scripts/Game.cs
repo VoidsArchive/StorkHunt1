@@ -7,7 +7,6 @@ public class Game : MonoBehaviour
 
     private void Awake()
     {
-        // initialize singleton instance
         if (Instance == null)
             Instance = this;
         else if (Instance != this)
@@ -19,7 +18,7 @@ public class Game : MonoBehaviour
     public PlayerHealth PlayerHealth;
     public Music Music;
     public static bool isGameActive = false;
-    public Mongoose mongoosePrefab; // assign the mongoose prefab in the inspector
+    public Mongoose mongoosePrefab;
     private Mongoose activeMongoose;
     public StorkSpawner storkSpawnerPrefab;
     private StorkSpawner activeStorkSpawner;
@@ -81,8 +80,6 @@ public class Game : MonoBehaviour
         Ui.HideGameplayScreen();
         Ui.ShowGameOverScreen();
         Music.PlayMenuMusic();
-        
-        // Clear active powerups so they don't persist to next game session
         PowerUps.ClearActiveTimedPowerups();
         
         if (gameTimer != null)

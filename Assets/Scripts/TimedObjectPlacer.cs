@@ -4,39 +4,29 @@ using System.Collections;
 public class TimedObjectPlacer : MonoBehaviour
 {
     public GameObject prefab;
-
-    // public float speed = 5f;
-    
     public float minimumSecondsToWait;
     public float maximumSecondsToWait;
-    
     private Coroutine spawnCoroutine;
-
     protected virtual void Start()
     {
         RestartSpawnLoop();
     }
-
     protected virtual float GetMinimumSecondsToWait()
     {
         return minimumSecondsToWait;
     }
-
     protected virtual float GetMaximumSecondsToWait()
     {
         return maximumSecondsToWait;
     }
-
     protected void RestartSpawnLoop()
     {
         if (spawnCoroutine != null)
         {
             StopCoroutine(spawnCoroutine);
         }
-
         spawnCoroutine = StartCoroutine(CountdownUntilCreation());
     }
-
     protected void StopSpawnLoop()
     {
         if (spawnCoroutine != null)
@@ -45,15 +35,12 @@ public class TimedObjectPlacer : MonoBehaviour
             spawnCoroutine = null;
         }
     }
-
     IEnumerator CountdownUntilCreation()
     {
         yield return new WaitForSeconds(Random.Range(GetMinimumSecondsToWait(), GetMaximumSecondsToWait()));
         Place();
         spawnCoroutine = StartCoroutine(CountdownUntilCreation());
     }
-
-
     public virtual void Place()
     {
         Camera cam = Camera.main;
@@ -65,6 +52,4 @@ public class TimedObjectPlacer : MonoBehaviour
 
         Instantiate(prefab, spawnPos, Quaternion.identity);
     }
-    
-    
 }

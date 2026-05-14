@@ -6,7 +6,6 @@ using UnityEngine;
 public class UI : MonoBehaviour
 
 {
-    //public TMP_Text scoreText;
     public TMP_Text timeText;
     public TMP_Text healthText;
     public PlayerHealth playerHealth;
@@ -16,7 +15,6 @@ public class UI : MonoBehaviour
     public CanvasGroup GameOverScreenCanvasGroup;
     public CanvasGroup GameplayScreenCanvasGroup;
     public GameTimer gameTimer;
-    
     private void Awake()
     {
         if (activePowerupText == null)
@@ -27,8 +25,6 @@ public class UI : MonoBehaviour
                 activePowerupText = powerupTextTransform.GetComponent<TMP_Text>();
             }
         }
-
-        // If canvas groups weren't assigned in the inspector, attempt to find them by name
         if (StartScreenCanvasGroup == null)
         {
             CanvasGroup[] all = FindObjectsOfType<CanvasGroup>(true);
@@ -42,7 +38,6 @@ public class UI : MonoBehaviour
                 }
             }
         }
-
         if (GameOverScreenCanvasGroup == null)
         {
             CanvasGroup[] all = FindObjectsOfType<CanvasGroup>(true);
@@ -57,8 +52,6 @@ public class UI : MonoBehaviour
                 }
             }
         }
-
-        // Wire UI buttons automatically to ensure clicks call Game even if the inspector wasn't wired.
         if (StartScreenCanvasGroup != null)
         {
             Button[] startButtons = StartScreenCanvasGroup.GetComponentsInChildren<Button>(true);
@@ -70,7 +63,6 @@ public class UI : MonoBehaviour
             if (startButtons.Length > 0)
                 Debug.Log("UI: Wired StartScreen buttons to OnStartButtonPressed");
         }
-
         if (GameOverScreenCanvasGroup != null)
         {
             Button[] gameOverButtons = GameOverScreenCanvasGroup.GetComponentsInChildren<Button>(true);
@@ -82,8 +74,6 @@ public class UI : MonoBehaviour
             if (gameOverButtons.Length > 0)
                 Debug.Log("UI: Wired GameOver buttons to OnPlayAgainButtonPressed");
         }
-
-        // If we didn't find any buttons via canvas groups, fall back to scanning all buttons
         Button[] allButtons = FindObjectsOfType<Button>(true);
         if ((StartScreenCanvasGroup == null || StartScreenCanvasGroup.GetComponentsInChildren<Button>(true).Length == 0) ||
             (GameOverScreenCanvasGroup == null || GameOverScreenCanvasGroup.GetComponentsInChildren<Button>(true).Length == 0))
@@ -106,8 +96,6 @@ public class UI : MonoBehaviour
                     b.onClick.AddListener(OnPlayAgainButtonPressed);
                     wired = true;
                 }
-
-                // inspect child text components for keywords if name didn't match
                 if (!wired)
                 {
                     TMP_Text label = b.GetComponentInChildren<TMP_Text>(true);
@@ -128,7 +116,6 @@ public class UI : MonoBehaviour
                         }
                     }
                 }
-
                 if (wired)
                     Debug.Log($"UI: Wired button '{b.gameObject.name}' based on heuristic");
             }
@@ -142,28 +129,23 @@ public class UI : MonoBehaviour
     {
         CanvasGroupDisplayer.Hide(StartScreenCanvasGroup);
     }
-    
     public void HideGameOverScreen()
     {
         CanvasGroupDisplayer.Hide(GameOverScreenCanvasGroup);
     }
-    
     public void ShowGameOverScreen()
     {
         ShowStats();
         CanvasGroupDisplayer.Show(GameOverScreenCanvasGroup);
     }
-
     public void ShowGameplayScreen()
     {
         CanvasGroupDisplayer.Show(GameplayScreenCanvasGroup);
     }
-
     public void HideGameplayScreen()
     {
         CanvasGroupDisplayer.Hide(GameplayScreenCanvasGroup);
     }
-    
     public void ShowTime()
     {
         if (timeText != null && gameTimer != null)
@@ -178,7 +160,6 @@ public class UI : MonoBehaviour
             activePowerupText.text = PowerUps.GetActiveTimedPowerupsText();
         }
     }
-
     public void ShowHealth()
     {
         if (healthText != null)
@@ -195,7 +176,6 @@ public class UI : MonoBehaviour
 
         return builder.ToString().TrimEnd();
     }
-
     public void ShowStats()
     {
         if (statsText != null)
@@ -203,8 +183,6 @@ public class UI : MonoBehaviour
             statsText.text = GetStatsText();
         }
     }
-
-    // Methods intended to be wired to UI Buttons in the Editor. They forward to the Game singleton.
     public void Start()
     {
         Button[] allButtons = FindObjectsOfType<Button>(true);
@@ -214,7 +192,6 @@ public class UI : MonoBehaviour
             Debug.Log($"UI: Button present: {b.gameObject.name}");
         }
     }
-    
     public void OnStartButtonPressed()
     {
         Debug.Log("UI: OnStartButtonPressed invoked");
