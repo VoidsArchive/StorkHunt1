@@ -1,11 +1,9 @@
 using UnityEngine;
 
 public class Stork : TimedObject
-{
-    [Header("Powerup Drop")]
-    [SerializeField] private GameObject powerUpPrefab;
-    [Range(0f, 1f)]
-    [SerializeField] private float powerUpDropChance = 0.25f;
+{ 
+    private GameObject powerUpPrefab;
+    private float powerUpDropChance = GameParameters.PowerUpDropChance;
     private bool wasShotDown;
     private ObjectMover objectMover;
     private float originalSpeed;
@@ -25,6 +23,10 @@ public class Stork : TimedObject
     }
     private void Update()
     {
+        if (!Game.isGameActive)
+        {
+            Destroy(gameObject);
+        }
         if (GlobalSpeedMultiplier != 1f && Time.time > GlobalSpeedExpiry)
         {
             ResetGlobalSpeedMultiplier();
@@ -42,7 +44,7 @@ public class Stork : TimedObject
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Destroyer"))
+        if (other.CompareTag("Destroyer") || other.CompareTag("Player"))
         {
             Destroy(gameObject);
         }

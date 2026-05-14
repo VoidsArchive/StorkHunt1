@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e4abe22e958b748e882bd51df7bb3c86
+guid: 902b6a8b8c2294d699c76b0f372de656
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6278551531000726368
-    second: Stork_0
+      213: -8155783761172236028
+    second: SH_Game_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -74,7 +74,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stork_0
+      name: SH_Game_Background_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 127
-        height: 92
+        width: 8001
+        height: 4500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 063884d2a55e12750800000000000000
-      internalID: 6278551531000726368
+      spriteID: 409fd6261e5d0de80800000000000000
+      internalID: -8155783761172236028
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stork_0: 6278551531000726368
+      SH_Game_Background_0: -8155783761172236028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

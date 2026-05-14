@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Destroyer
   - Powerup
+  - Crosshair
   layers:
   - Default
   - TransparentFX

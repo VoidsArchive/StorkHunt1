@@ -82,6 +82,12 @@ public class PowerUps : MonoBehaviour
         ActiveTimedEffects.RemoveAll(effect => effect.expiryTime <= Time.time);
     }
 
+    public static void ClearActiveTimedPowerups()
+    {
+        ActiveTimedEffects.Clear();
+        Debug.Log("PowerUps: Cleared all active timed powerups");
+    }
+
     [Header("Buff / Debuff Roll")] [Range(0f, 1f)] [SerializeField]
     private float buffChance = 0.5f;
 
@@ -158,18 +164,11 @@ public class PowerUps : MonoBehaviour
         {
             return;
         }
-
-        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-        if (playerHealth == null)
-        {
-            return;
-        }
-
-        ApplyEffect(playerHealth);
+        ApplyEffect();
         Destroy(gameObject);
     }
 
-    private void ApplyEffect(PlayerHealth playerHealth)
+    private void ApplyEffect()
     {
         if (!hasRolledEffect)
         {
@@ -179,10 +178,10 @@ public class PowerUps : MonoBehaviour
         switch (rolledEffect)
         {
             case EffectType.IncreaseHealth:
-                playerHealth.ChangeHealth(Random.Range(minHealthIncrease, maxHealthIncrease + 1));
+                PlayerHealth.ChangeHealth(Random.Range(minHealthIncrease, maxHealthIncrease + 1));
                 break;
             case EffectType.IncreaseTime:
-                GameClock gc = FindObjectOfType<GameClock>();
+                GameTimer gc = FindObjectOfType<GameTimer>();
                 if (gc != null)
                 {
                     int add = Random.Range(minTimeIncrease, maxTimeIncrease + 1);
@@ -190,20 +189,20 @@ public class PowerUps : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("No GameClock found in scene to apply TimeBoost");
+                    Debug.LogWarning("No GameTimer found in scene to apply TimeBoost");
                 }
 
                 break;
             case EffectType.DecreaseTime:
-                GameClock gameClock = FindObjectOfType<GameClock>();
-                if (gameClock != null)
+                GameTimer gameTimer = FindObjectOfType<GameTimer>();
+                if (gameTimer != null)
                 {
                     int subtract = Random.Range(minTimeDecrease, maxTimeDecrease + 1);
-                    gameClock.RemoveSeconds(subtract);
+                    gameTimer.RemoveSeconds(subtract);
                 }
                 else
                 {
-                    Debug.LogWarning("No GameClock found in scene to apply DecreaseTime");
+                    Debug.LogWarning("No GameTimer found in scene to apply DecreaseTime");
                 }
 
                 break;
@@ -228,7 +227,7 @@ public class PowerUps : MonoBehaviour
 
                 break;
             case EffectType.DecreaseHealth:
-                playerHealth.ChangeHealth(-1);
+                PlayerHealth.ChangeHealth(-1);
                 break;
         }
     }

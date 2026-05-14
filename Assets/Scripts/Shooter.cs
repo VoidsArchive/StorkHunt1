@@ -5,7 +5,17 @@ public class Shooter : MonoBehaviour
 {
     public BulletManager BulletManager;
     private bool clickPending = false;
+    public static int storksShot = 0;
 
+    public static void ResetStorksShot()
+    {
+        storksShot = 0;
+    }
+
+    public static int getStorksShot()
+    {
+        return storksShot;
+    }
     void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -19,7 +29,6 @@ public class Shooter : MonoBehaviour
             clickPending = false;
         }
     }
-
     void OnTriggerStay2D(Collider2D other)
     {
         if (clickPending && !BulletManager.GetIsReloading())
@@ -27,6 +36,7 @@ public class Shooter : MonoBehaviour
             if (other.CompareTag("Stork"))
             {
                 Debug.Log("HIT STORK!");
+                storksShot++;
                 clickPending = false;
 
                 Stork stork = other.GetComponent<Stork>();

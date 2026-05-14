@@ -20,6 +20,17 @@ public class StorkSpawner : TimedObjectPlacer
         }
         storkSwarmCoroutine = StartCoroutine(StorkSwarmRoutine());
     }
+
+    // Public API so external controllers (e.g. Game) can pause/resume spawning
+    public void StopSpawning()
+    {
+        StopSpawnLoop();
+    }
+
+    public void StartSpawning()
+    {
+        RestartSpawnLoop();
+    }
     protected override float GetMinimumSecondsToWait()
     {
         return isStorkSwarmActive ? 0f : minimumSecondsToWait;

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e4abe22e958b748e882bd51df7bb3c86
+guid: 841101b648fcf453b8eb11d4399d0db2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6278551531000726368
-    second: Stork_0
+      213: -2344413317925073893
+    second: SH_Blown_Grass_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stork_0
+      name: SH_Blown_Grass_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 127
-        height: 92
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 8000
+        height: 618
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 063884d2a55e12750800000000000000
-      internalID: 6278551531000726368
+      spriteID: b1c81623288f67fd0800000000000000
+      internalID: -2344413317925073893
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9b286955b94d94b3c8844f752b8ed437
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stork_0: 6278551531000726368
+      SH_Blown_Grass_0: -2344413317925073893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

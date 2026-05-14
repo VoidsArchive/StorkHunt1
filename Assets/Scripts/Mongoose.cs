@@ -9,7 +9,7 @@ public class Mongoose : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
+    
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.collider.tag == "Projectile")

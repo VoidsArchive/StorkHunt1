@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class GameClock : MonoBehaviour
+public class GameTimer : MonoBehaviour
 {
     private int elapsedSeconds;
     private bool isRunning;
-    public void StartTimer(Action methodToCallWhenTimeIsOver)
+    public void StartTimer()
     {
         StopAllCoroutines();
         isRunning = true;
@@ -40,14 +40,6 @@ public class GameClock : MonoBehaviour
         string secondsAsString = String.Format("{0:00}", seconds);
         return minutesAsString + ":" + secondsAsString;
     }
-    public int GetSecondsRemaining()
-    {
-        return elapsedSeconds;
-    }
-    public bool IsRunning()
-    {
-        return isRunning;
-    }
     IEnumerator TickOneSecond()
     {
         while (isRunning)
@@ -56,5 +48,9 @@ public class GameClock : MonoBehaviour
             if (!isRunning) break;
             elapsedSeconds = elapsedSeconds + 1;
         }
+    }
+    public void ResetTimer()
+    {
+        elapsedSeconds = 0;
     }
 }
