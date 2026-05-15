@@ -11,6 +11,7 @@ public class Stork : TimedObject
     private static float GlobalSpeedExpiry = 0f;
     
     public Animator animator;
+    public Sounds Sounds;
     
     public new void Start()
     {
@@ -48,6 +49,7 @@ public class Stork : TimedObject
     public void StartFalling()
     {
         animator.SetBool("IsFalling", true);
+        Sounds.PlayFallingSound();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

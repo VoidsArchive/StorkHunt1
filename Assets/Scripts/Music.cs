@@ -9,7 +9,7 @@ public class Music : MonoBehaviour
    public AudioSource CurrentSource;
    public AudioSource IncomingSource;
 
-   private float fadeDurationInSeconds = 5f;
+   private float fadeDurationInSeconds = 2f;
    private float maximumVolume = 0.4f;
 
    public void Awake()
@@ -24,6 +24,7 @@ public class Music : MonoBehaviour
       if (CurrentSource.clip == null)
       {
          CurrentSource.clip = MenuMusic;
+         IncomingSource.clip = GameMusic;
          CurrentSource.Play();
          return;
       }
@@ -33,14 +34,14 @@ public class Music : MonoBehaviour
          return;
       }
 
-      if (CurrentSource.clip == GameMusic)
+     if (CurrentSource.clip == GameMusic)
       {
          CurrentSource.clip = MenuMusic;
          CurrentSource.Play();
          return;
       }
 
-      //StartCoroutine(CrossFade(MenuMusic));
+      StartCoroutine(CrossFade(MenuMusic));
    }
 
    public void PlayGameMusic()
@@ -50,16 +51,16 @@ public class Music : MonoBehaviour
          return;
       }
 
-      if (CurrentSource.clip == MenuMusic)
+     if (CurrentSource.clip == MenuMusic)
       {
          CurrentSource.clip = GameMusic;
          CurrentSource.Play();
          return;
-      }
-      //StartCoroutine(CrossFade(GameMusic));
+      } 
+      StartCoroutine(CrossFade(GameMusic));
    }
 
- /*  public IEnumerator CrossFade(AudioClip newClip)
+   public IEnumerator CrossFade(AudioClip newClip)
    {
       IncomingSource.clip = newClip;
       IncomingSource.volume = 0f;
@@ -81,5 +82,5 @@ public class Music : MonoBehaviour
          (CurrentSource, IncomingSource) = (IncomingSource, CurrentSource);
       
 
-   }*/
+   } 
 }

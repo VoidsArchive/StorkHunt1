@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stork
   secondsOnScreen: 20
   animator: {fileID: 4542574669922988575}
+  Sounds: {fileID: 752955126379260212, guid: d44a81b16960cdd43ab6242be55f4feb, type: 3}
 --- !u!50 &7353888565720791767
 Rigidbody2D:
   serializedVersion: 5
