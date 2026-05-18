@@ -24,7 +24,7 @@ public class Music : MonoBehaviour
       if (CurrentSource.clip == null)
       {
          CurrentSource.clip = MenuMusic;
-         IncomingSource.clip = GameMusic;
+         //IncomingSource.clip = GameMusic;
          CurrentSource.Play();
          return;
       }
@@ -34,12 +34,12 @@ public class Music : MonoBehaviour
          return;
       }
 
-     if (CurrentSource.clip == GameMusic)
+     /* if (CurrentSource.clip == GameMusic)
       {
          CurrentSource.clip = MenuMusic;
          CurrentSource.Play();
          return;
-      }
+      } */
 
       StartCoroutine(CrossFade(MenuMusic));
    }
@@ -51,12 +51,12 @@ public class Music : MonoBehaviour
          return;
       }
 
-     if (CurrentSource.clip == MenuMusic)
+    /* if (CurrentSource.clip == MenuMusic)
       {
          CurrentSource.clip = GameMusic;
          CurrentSource.Play();
          return;
-      } 
+      } */
       StartCoroutine(CrossFade(GameMusic));
    }
 
@@ -78,8 +78,8 @@ public class Music : MonoBehaviour
          yield return null;
       }
       CurrentSource.Stop();
-         CurrentSource.volume = maximumVolume;
-         (CurrentSource, IncomingSource) = (IncomingSource, CurrentSource);
+      CurrentSource.volume = maximumVolume;
+      (CurrentSource, IncomingSource) = (IncomingSource, CurrentSource);
       
 
    } 

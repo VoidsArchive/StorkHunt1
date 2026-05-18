@@ -10,6 +10,7 @@ TagManager:
   - Destroyer
   - Powerup
   - Crosshair
+  - Sounds
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,11 @@ public class Stork : TimedObject
     
     public Animator animator;
     public Sounds Sounds;
+
+    public void Awake()
+    {
+        Sounds = GameObject.FindGameObjectWithTag("Sounds").GetComponent<Sounds>();
+    }
     
     public new void Start()
     {
