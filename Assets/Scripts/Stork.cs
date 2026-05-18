@@ -39,7 +39,7 @@ public class Stork : TimedObject
     {
         wasShotDown = true;
         StartFalling();
-        
+        Sounds.PlayFallingSound();
     }
     public bool IsShotDown
     {
@@ -49,7 +49,7 @@ public class Stork : TimedObject
     public void StartFalling()
     {
         animator.SetBool("IsFalling", true);
-        Sounds.PlayFallingSound();
+        //Sounds.PlayFallingSound();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

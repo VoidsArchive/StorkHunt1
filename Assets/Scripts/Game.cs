@@ -17,6 +17,7 @@ public class Game : MonoBehaviour
     public GameTimer gameTimer;
     public PlayerHealth PlayerHealth;
     public Music Music;
+    public Sounds Sounds;
     public static bool isGameActive = false;
     public Mongoose mongoosePrefab;
     private Mongoose activeMongoose;
@@ -52,7 +53,10 @@ public class Game : MonoBehaviour
         Debug.Log("Game: OnStartButtonClicked invoked");
         SetIsGameActive(true);
         if (Ui != null)
+        {
             Ui.HideStartScreen();
+            Sounds.PlayClickSound();
+        }
         else
             Debug.LogWarning("Game: Ui is null in OnStartButtonClicked");
 
@@ -134,6 +138,7 @@ public class Game : MonoBehaviour
     {
         Debug.Log("Game: OnPlayAgainButtonClicked invoked");
         Ui.HideGameOverScreen();
+        Sounds.PlayClickSound();
         SetIsGameActive(true);
         PlayerHealth.ResetHealth();
         Ui.ShowHealth();

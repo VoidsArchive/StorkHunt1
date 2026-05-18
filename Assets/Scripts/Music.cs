@@ -10,7 +10,7 @@ public class Music : MonoBehaviour
    public AudioSource IncomingSource;
 
    private float fadeDurationInSeconds = 2f;
-   private float maximumVolume = 0.4f;
+   private float maximumVolume = 0.6f;
 
    public void Awake()
    {
