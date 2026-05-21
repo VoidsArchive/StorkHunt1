@@ -9,6 +9,15 @@ public class Stork : TimedObject
     private float originalSpeed;
     private static float GlobalSpeedMultiplier = 1f;
     private static float GlobalSpeedExpiry = 0f;
+    
+    public Animator animator;
+    public Sounds Sounds;
+
+    public void Awake()
+    {
+        Sounds = GameObject.FindGameObjectWithTag("Sounds").GetComponent<Sounds>();
+    }
+    
     public new void Start()
     {
         secondsOnScreen = GameParameters.StorkSecondsOnScreen;
@@ -34,10 +43,18 @@ public class Stork : TimedObject
     public void MarkAsShotDown()
     {
         wasShotDown = true;
+        StartFalling();
+        Sounds.PlayFallingSound();
     }
     public bool IsShotDown
     {
         get { return wasShotDown; }
+    }
+    
+    public void StartFalling()
+    {
+        animator.SetBool("IsFalling", true);
+        //Sounds.PlayFallingSound();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

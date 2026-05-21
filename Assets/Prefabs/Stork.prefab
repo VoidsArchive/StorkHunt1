@@ -198,4 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Stork
   secondsOnScreen: 1
-  powerUpPrefab: {fileID: 2399075797690494303, guid: 21dd3aaac7fcf9047839657d9729cccc, type: 3}
+  animator: {fileID: 0}
+  Sounds: {fileID: 752955126379260212, guid: d44a81b16960cdd43ab6242be55f4feb, type: 3}

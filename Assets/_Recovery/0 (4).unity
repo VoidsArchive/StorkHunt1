@@ -3107,10 +3107,6 @@ PrefabInstance:
       value: 0.313
       objectReference: {fileID: 0}
     - target: {fileID: 8237549357919632148, guid: d70cb71a67961864da244ef1d3bf3f75, type: 3}
-      propertyPath: FallingSound
-      value: 
-      objectReference: {fileID: 8300000, guid: ecfce22c06714b744bc5a59e0c5ec641, type: 3}
-    - target: {fileID: 8237549357919632148, guid: d70cb71a67961864da244ef1d3bf3f75, type: 3}
       propertyPath: ReloadingSound
       value: 
       objectReference: {fileID: 8300000, guid: e5198250a6a57408bb36e14bc4a322c4, type: 3}

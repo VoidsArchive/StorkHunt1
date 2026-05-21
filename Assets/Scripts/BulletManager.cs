@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class BulletManager : MonoBehaviour
 {
+    public Sounds Sounds;
     public TMP_Text bulletText;
     public int bulletCount = 8;
     public int maxBullets = 8;
@@ -32,6 +33,7 @@ public class BulletManager : MonoBehaviour
         {
             bulletCount--;
             Debug.Log("Shot fired! Bullets left: " + bulletCount);
+            Sounds.PlayGunSound();
             return true;
         }
 
@@ -85,6 +87,7 @@ public class BulletManager : MonoBehaviour
     public void ReloadBullets()
     {
         Debug.Log("Currently reloading");
+        Sounds.PlayReloadingSound();
         isReloading = true;
         StartCoroutine(CountdownUntilReloaded());
     }

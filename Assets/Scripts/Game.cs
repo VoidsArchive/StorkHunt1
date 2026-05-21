@@ -17,6 +17,7 @@ public class Game : MonoBehaviour
     public GameTimer gameTimer;
     public PlayerHealth PlayerHealth;
     public Music Music;
+    public Sounds Sounds;
     public static bool isGameActive = false;
     public Mongoose mongoosePrefab;
     private Mongoose activeMongoose;
@@ -48,11 +49,17 @@ public class Game : MonoBehaviour
         activeStorkSpawner = FindObjectOfType<StorkSpawner>();
     }
     public void OnStartButtonClicked()
-    { 
+    {
+        if (isGameActive)
+            return;
+        
         Debug.Log("Game: OnStartButtonClicked invoked");
         SetIsGameActive(true);
         if (Ui != null)
+        {
             Ui.HideStartScreen();
+            Sounds.PlayClickSound();
+        }
         else
             Debug.LogWarning("Game: Ui is null in OnStartButtonClicked");
 
@@ -134,11 +141,11 @@ public class Game : MonoBehaviour
     {
         Debug.Log("Game: OnPlayAgainButtonClicked invoked");
         Ui.HideGameOverScreen();
+        Sounds.PlayClickSound();
         SetIsGameActive(true);
         PlayerHealth.ResetHealth();
         Ui.ShowHealth();
         gameTimer.ResetTimer();
-        Music.PlayGameMusic();
         if (activeMongoose == null)
         {
             GameObject go = Instantiate(mongoosePrefab.gameObject);

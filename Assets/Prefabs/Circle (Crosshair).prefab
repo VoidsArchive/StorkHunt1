@@ -183,3 +183,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooter
   BulletManager: {fileID: 0}
+  Animator: {fileID: 2955730961461726359, guid: 70be0836afd73410d8347bc9c7ce07e2, type: 3}
