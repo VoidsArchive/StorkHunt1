@@ -142,6 +142,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUps
   buffChance: 0.5
+  availableBuffs: 000000000100000004000000
+  availableDebuffs: 02000000030000000500000006000000
+  minHealthIncrease: 1
+  maxHealthIncrease: 3
+  minTimeIncrease: 5
+  maxTimeIncrease: 15
+  minTimeDecrease: 5
+  maxTimeDecrease: 15
+  storkSpeedMultiplier: 0.5
+  storkSpeedDuration: 10
+  fastStorkSpeedMultiplier: 1.5
+  fastStorkSpeedDuration: 10
+  lifetimeSeconds: 10
+  buffChance: 0.5
   availableBuffs: 00000000
   availableDebuffs: 02000000030000000500000006000000
   minHealthIncrease: 1
