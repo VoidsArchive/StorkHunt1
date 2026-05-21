@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &21027182
 SpriteRenderer:
   serializedVersion: 2
@@ -421,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 8120901304337039615, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8415061714113433071, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1188840775478129192, guid: 76c2f4400799c479aadb2ab6793598bf, type: 3}
@@ -1115,7 +1119,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8155783761172236028, guid: 902b6a8b8c2294d699c76b0f372de656, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1219,7 +1223,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2344413317925073893, guid: 841101b648fcf453b8eb11d4399d0db2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.59607846}
@@ -1322,7 +1326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1140645948
 SpriteRenderer:
   serializedVersion: 2

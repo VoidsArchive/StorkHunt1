@@ -46,7 +46,7 @@ public class GameTimer : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             if (!isRunning) break;
-            elapsedSeconds = elapsedSeconds + 1;
+            elapsedSeconds += 1;
         }
     }
     public void ResetTimer()
