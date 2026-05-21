@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2ef4494b9c582bf45956e4aff7ed60e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,17 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752d8365edb551d41ae5b2f7baba88ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUps
-  buffChance: 0.5
-  availableBuffs: 000000000100000004000000
-  availableDebuffs: 02000000030000000500000006000000
-  minHealthIncrease: 1
-  maxHealthIncrease: 3
-  minTimeIncrease: 5
-  maxTimeIncrease: 15
-  minTimeDecrease: 5
-  maxTimeDecrease: 15
-  storkSpeedMultiplier: 0.5
-  storkSpeedDuration: 10
-  fastStorkSpeedMultiplier: 1.5
-  fastStorkSpeedDuration: 10
-  lifetimeSeconds: 10

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Stork : TimedObject
 { 
-    private GameObject powerUpPrefab;
-    private float powerUpDropChance = GameParameters.PowerUpDropChance;
+    [SerializeField] private GameObject powerUpPrefab;
+    [SerializeField] private float powerUpDropChance = GameParameters.PowerUpDropChance;
     private bool wasShotDown;
     private ObjectMover objectMover;
     private float originalSpeed;

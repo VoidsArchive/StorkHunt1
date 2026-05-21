@@ -87,23 +87,40 @@ public class PowerUps : MonoBehaviour
         ActiveTimedEffects.Clear();
         Debug.Log("PowerUps: Cleared all active timed powerups");
     }
+
+    [Header("Buff / Debuff Roll")] [Range(0f, 1f)] [SerializeField]
     private float buffChance = 0.5f;
-    private EffectType[] availableBuffs = { EffectType.IncreaseHealth };
-    private EffectType[] availableDebuffs = { EffectType.DecreaseHealth, EffectType.DecreaseTime, EffectType.FastStorkSpeed, EffectType.StorkSwarm };
+
+    [SerializeField] private EffectType[] availableBuffs = { EffectType.IncreaseHealth };
+
+    [SerializeField] private EffectType[] availableDebuffs =
+        { EffectType.DecreaseHealth, EffectType.DecreaseTime, EffectType.FastStorkSpeed, EffectType.StorkSwarm };
+
+    [Header("Health Effect Values")] [SerializeField]
     private int minHealthIncrease = 1;
-    private int maxHealthIncrease = 3;
+
+    [SerializeField] private int maxHealthIncrease = 3;
+
+    [Header("Time Effect Values")] [SerializeField]
     private int minTimeIncrease = 5;
 
-    private int maxTimeIncrease = 15;
-    private int minTimeDecrease = 5;
-    private int maxTimeDecrease = 15;
-    private float storkSpeedMultiplier = 0.5f; 
-    private float storkSpeedDuration = 10f;
-    private float fastStorkSpeedMultiplier = 1.5f;
-    private float fastStorkSpeedDuration = 10f;
+    [SerializeField] private int maxTimeIncrease = 15;
+    [SerializeField] private int minTimeDecrease = 5;
+    [SerializeField] private int maxTimeDecrease = 15;
+
+    [Header("Stork Speed Effect")] [SerializeField]
+    private float storkSpeedMultiplier = 0.5f; // 50% speed
+
+    [SerializeField] private float storkSpeedDuration = 10f;
+    [SerializeField] private float fastStorkSpeedMultiplier = 1.5f;
+    [SerializeField] private float fastStorkSpeedDuration = 10f;
+
+    [Header("Pickup Lifetime")] [SerializeField]
     private float lifetimeSeconds = 10f;
+
     private EffectType rolledEffect;
     private bool hasRolledEffect;
+
     private void Start()
     {
         if (!hasRolledEffect)

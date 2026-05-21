@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stork
   secondsOnScreen: 20
   powerUpPrefab: {fileID: 2399075797690494303, guid: 21dd3aaac7fcf9047839657d9729cccc, type: 3}
+  powerUpDropChance: 1
 --- !u!50 &7353888565720791767
 Rigidbody2D:
   serializedVersion: 5

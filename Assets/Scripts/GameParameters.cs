@@ -13,7 +13,7 @@ public static class GameParameters
 
     public static float StorkSwarmDelaySeconds = 5f;
     public static float StorkSwarmDurationSeconds = 5f;
-    public static float PowerUpDropChance = 0.25f;
+    public static float PowerUpDropChance = 1.0f;
 
     public static float ProjectileMinimumSecondsToWait = 1f;
     public static float ProjectileMaximumSecondsToWait = 2f;
