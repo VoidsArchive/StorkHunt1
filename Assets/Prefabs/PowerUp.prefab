@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2ef4494b9c582bf45956e4aff7ed60e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,3 +141,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752d8365edb551d41ae5b2f7baba88ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUps
+  buffChance: 0.5
+  availableBuffs: 00000000
+  availableDebuffs: 02000000030000000500000006000000
+  minHealthIncrease: 1
+  maxHealthIncrease: 3
+  minTimeIncrease: 5
+  maxTimeIncrease: 15
+  minTimeDecrease: 5
+  maxTimeDecrease: 15
+  storkSpeedMultiplier: 0.5
+  storkSpeedDuration: 10
+  fastStorkSpeedMultiplier: 1.5
+  fastStorkSpeedDuration: 10
+  lifetimeSeconds: 10
+  increaseHealthSprite: {fileID: -1795552494886418818, guid: c4a1292c06e13401c869365b4c086c6a, type: 3}
+  decreaseHealthSprite: {fileID: -9095556718673864530, guid: be27678b4950a4883a7cacf36f0273f4, type: 3}
+  increaseTimeSprite: {fileID: 6581442597774952445, guid: 4b29aa6a2368343b3afbea186715d85b, type: 3}
+  decreaseTimeSprite: {fileID: 5965108355440124561, guid: 8b751cdd455634b83a7f8453e94ab0db, type: 3}
+  slowStorkSprite: {fileID: -6455190731839736232, guid: 12d4bd01bdf774784a112ad925a5a28a, type: 3}
+  fastStorkSprite: {fileID: 5934574930080575827, guid: 2f685836fa1ec47168efbf1268891683, type: 3}
+  storkSwarmSprite: {fileID: -2893701415923483506, guid: 95c17c8a064c0424abf8063eaae054b6, type: 3}

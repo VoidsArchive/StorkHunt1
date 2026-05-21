@@ -121,6 +121,7 @@ public class UI : MonoBehaviour
             }
         }
     }
+    
     public void ShowStartScreen()
     {
        CanvasGroupDisplayer.Show(StartScreenCanvasGroup);
@@ -165,6 +166,8 @@ public class UI : MonoBehaviour
         if (healthText != null)
         {
             healthText.text = playerHealth.HealthAsString();
+            healthText.color = playerHealth.GetPlayerHealth() <= 2 ? Color.red : Color.white;
+
         }
     }
     public string GetStatsText()

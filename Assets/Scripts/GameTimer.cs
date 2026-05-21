@@ -39,6 +39,7 @@ public class GameTimer : MonoBehaviour
         string minutesAsString = String.Format("{0:00}", minutes);
         string secondsAsString = String.Format("{0:00}", seconds);
         return minutesAsString + ":" + secondsAsString;
+        
     }
     IEnumerator TickOneSecond()
     {

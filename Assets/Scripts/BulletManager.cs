@@ -18,13 +18,18 @@ public class BulletManager : MonoBehaviour
         Keyboard keyboard = Keyboard.current;
         if (keyboard.rKey.wasPressedThisFrame && Game.isGameActive)
         {
+            Debug.Log("pressing R");
             ReloadBullets();
+
         }
     }
 
     private void UpdateBullets()
     {
         bulletText.text = "Ammo: " + GetBulletCount() + "/" + GetMaxBullets() + " " + ReloadStatusAsText();
+        bulletText.color = isReloading ? Color.red : Color.white;
+
+
     }
 
     public bool Shoot()

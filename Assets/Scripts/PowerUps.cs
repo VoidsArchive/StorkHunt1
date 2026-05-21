@@ -117,18 +117,49 @@ public class PowerUps : MonoBehaviour
 
     [Header("Pickup Lifetime")] [SerializeField]
     private float lifetimeSeconds = 10f;
+    
+    [Header("Sprites per Effect")]
+    [SerializeField] private Sprite increaseHealthSprite;
+    [SerializeField] private Sprite decreaseHealthSprite;
+    [SerializeField] private Sprite increaseTimeSprite;
+    [SerializeField] private Sprite decreaseTimeSprite;
+    [SerializeField] private Sprite slowStorkSprite;
+    [SerializeField] private Sprite fastStorkSprite;
+    [SerializeField] private Sprite storkSwarmSprite;
+
+    private SpriteRenderer spriteRenderer;
 
     private EffectType rolledEffect;
     private bool hasRolledEffect;
 
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+ 
         if (!hasRolledEffect)
         {
             RollRandomEffect();
         }
-
+ 
+        ApplySprite();
+ 
         Destroy(gameObject, lifetimeSeconds);
+    }
+    
+    private void ApplySprite()
+    {
+        if (spriteRenderer == null) return;
+ 
+        switch (rolledEffect)
+        {
+            case EffectType.IncreaseHealth: spriteRenderer.sprite = increaseHealthSprite; break;
+            case EffectType.DecreaseHealth: spriteRenderer.sprite = decreaseHealthSprite; break;
+            case EffectType.IncreaseTime:   spriteRenderer.sprite = increaseTimeSprite;   break;
+            case EffectType.DecreaseTime:   spriteRenderer.sprite = decreaseTimeSprite;   break;
+            case EffectType.SlowStorkSpeed: spriteRenderer.sprite = slowStorkSprite;      break;
+            case EffectType.FastStorkSpeed: spriteRenderer.sprite = fastStorkSprite;      break;
+            case EffectType.StorkSwarm:     spriteRenderer.sprite = storkSwarmSprite;     break;
+        }
     }
 
     public void RollRandomEffect()

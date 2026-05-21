@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sounds
   FallingSound: {fileID: 8300000, guid: 4dbfbd1a56081db4ca174255a4d56b1f, type: 3}
   GunSound: {fileID: 8300000, guid: 3061c7b9b32d894478e4126ccce25ca3, type: 3}
-  ReloadingSound: {fileID: 8300000, guid: 5e1a9f876d3dafd47bc6b3dde25135fa, type: 3}
+  ReloadingSound: {fileID: 8300000, guid: e5198250a6a57408bb36e14bc4a322c4, type: 3}
   ClickSound: {fileID: 8300000, guid: 918db793ba4f0f942a241db55d5fe60b, type: 3}
   audioSource: {fileID: 5091531656808893271}
 --- !u!82 &5091531656808893271
